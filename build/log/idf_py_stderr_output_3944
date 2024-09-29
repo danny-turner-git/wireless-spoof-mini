@@ -1,0 +1,28 @@
+/home/danny/esp-idf/projects/wireless-spoof/main/wireless-spoof.c: In function 'app_main':
+/home/danny/esp-idf/projects/wireless-spoof/main/wireless-spoof.c:10:17: error: implicit declaration of function 'ESP_LOGE'; did you mean 'ESP_OK'? [-Wimplicit-function-declaration]
+   10 |                 ESP_LOGE("%s", "Failed to initialise netword interface...");
+      |                 ^~~~~~~~
+      |                 ESP_OK
+/home/danny/esp-idf/projects/wireless-spoof/main/wireless-spoof.c:13:39: error: 'WIFI_INIT_CONFIG_DEFAULT' undeclared (first use in this function)
+   13 |         wifi_init_config_t wifi_cfg = WIFI_INIT_CONFIG_DEFAULT;
+      |                                       ^~~~~~~~~~~~~~~~~~~~~~~~
+/home/danny/esp-idf/projects/wireless-spoof/main/wireless-spoof.c:13:39: note: each undeclared identifier is reported only once for each function it appears in
+/home/danny/esp-idf/projects/wireless-spoof/main/wireless-spoof.c:16:31: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'esp_wifi_init'
+   16 |         esp_err_t winit_check esp_wifi_init(&wifi_cfg);
+      |                               ^~~~~~~~~~~~~
+/home/danny/esp-idf/projects/wireless-spoof/main/wireless-spoof.c:17:13: error: 'winit_check' undeclared (first use in this function)
+   17 |         if (winit_check != ESP_OK){
+      |             ^~~~~~~~~~~
+/home/danny/esp-idf/projects/wireless-spoof/main/wireless-spoof.c:22:30: error: expected '=', ',', ';', 'asm' or '__attribute__' before 'esp_wifi_set_mode'
+   22 |         esp_err_t mode_check esp_wifi_set_mode(WIFI_MODE_STA);
+      |                              ^~~~~~~~~~~~~~~~~
+/home/danny/esp-idf/projects/wireless-spoof/main/wireless-spoof.c:23:13: error: 'mode_check' undeclared (first use in this function)
+   23 |         if (mode_check != ESP_OK){
+      |             ^~~~~~~~~~
+/home/danny/esp-idf/projects/wireless-spoof/main/wireless-spoof.c:30:17: error: implicit declaration of function 'ESP_LOGI'; did you mean 'ESP_OK'? [-Wimplicit-function-declaration]
+   30 |                 ESP_LOGI("%s","Cycling through loop...");
+      |                 ^~~~~~~~
+      |                 ESP_OK
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:76: esp-idf/main/CMakeFiles/__idf_main.dir/wireless-spoof.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:5672: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:136: all] Error 2
