@@ -1,0 +1,50 @@
+/home/danny/esp-idf/projects/wireless-spoof/main/wireless-spoof.c: In function 'app_main':
+/home/danny/esp-idf/projects/wireless-spoof/main/wireless-spoof.c:20:17: error: request for member 'task_priority' in something not a structure or union
+   20 |                 .task_priority = NULL
+      |                 ^
+/home/danny/esp-idf/projects/wireless-spoof/main/wireless-spoof.c:21:17: error: request for member 'task_stack_size' in something not a structure or union
+   21 |                 .task_stack_size = 10
+      |                 ^
+/home/danny/esp-idf/projects/wireless-spoof/main/wireless-spoof.c:22:17: error: request for member 'task_core_id' in something not a structure or union
+   22 |                 .task_core_id = ESP_EVENT_ANY_ID
+      |                 ^
+/home/danny/esp-idf/projects/wireless-spoof/main/wireless-spoof.c:26:9: error: expected ',' or ';' before 'esp_event_loop_handle_t'
+   26 |         esp_event_loop_handle_t loop_handle;
+      |         ^~~~~~~~~~~~~~~~~~~~~~~
+/home/danny/esp-idf/projects/wireless-spoof/main/wireless-spoof.c:28:44: error: 'loop_handle' undeclared (first use in this function)
+   28 |         esp_event_loop_create(&loop_args, &loop_handle);
+      |                                            ^~~~~~~~~~~
+/home/danny/esp-idf/projects/wireless-spoof/main/wireless-spoof.c:28:44: note: each undeclared identifier is reported only once for each function it appears in
+In file included from /home/danny/esp-idf/components/esp_netif/include/esp_netif_types.h:12,
+                 from /home/danny/esp-idf/components/esp_netif/include/esp_netif.h:13,
+                 from /home/danny/esp-idf/projects/wireless-spoof/main/wireless-spoof.c:2:
+/home/danny/esp-idf/components/esp_event/include/esp_event_base.h:30:32: error: passing argument 2 of 'esp_event_handler_register_with' makes pointer from integer without a cast [-Wint-conversion]
+   30 | #define ESP_EVENT_ANY_ID       -1               /**< register handler for any event id */
+      |                                ^~
+      |                                |
+      |                                int
+/home/danny/esp-idf/projects/wireless-spoof/main/wireless-spoof.c:30:54: note: in expansion of macro 'ESP_EVENT_ANY_ID'
+   30 |         esp_event_handler_register_with(loop_handle, ESP_EVENT_ANY_ID, event_handler, NULL);
+      |                                                      ^~~~~~~~~~~~~~~~
+In file included from /home/danny/esp-idf/components/esp_wifi/include/esp_wifi.h:55,
+                 from /home/danny/esp-idf/projects/wireless-spoof/main/wireless-spoof.c:3:
+/home/danny/esp-idf/components/esp_event/include/esp_event.h:164:60: note: expected 'esp_event_base_t' {aka 'const char *'} but argument is of type 'int'
+  164 |                                           esp_event_base_t event_base,
+      |                                           ~~~~~~~~~~~~~~~~~^~~~~~~~~~
+/home/danny/esp-idf/projects/wireless-spoof/main/wireless-spoof.c:30:72: error: passing argument 3 of 'esp_event_handler_register_with' makes integer from pointer without a cast [-Wint-conversion]
+   30 |         esp_event_handler_register_with(loop_handle, ESP_EVENT_ANY_ID, event_handler, NULL);
+      |                                                                        ^~~~~~~~~~~~~
+      |                                                                        |
+      |                                                                        void (*)(void *, const char *, int32_t,  void *) {aka void (*)(void *, const char *, long int,  void *)}
+/home/danny/esp-idf/components/esp_event/include/esp_event.h:165:51: note: expected 'int32_t' {aka 'long int'} but argument is of type 'void (*)(void *, const char *, int32_t,  void *)' {aka 'void (*)(void *, const char *, long int,  void *)'}
+  165 |                                           int32_t event_id,
+      |                                           ~~~~~~~~^~~~~~~~
+/home/danny/esp-idf/projects/wireless-spoof/main/wireless-spoof.c:30:9: error: too few arguments to function 'esp_event_handler_register_with'
+   30 |         esp_event_handler_register_with(loop_handle, ESP_EVENT_ANY_ID, event_handler, NULL);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/home/danny/esp-idf/components/esp_event/include/esp_event.h:163:11: note: declared here
+  163 | esp_err_t esp_event_handler_register_with(esp_event_loop_handle_t event_loop,
+      |           ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:76: esp-idf/main/CMakeFiles/__idf_main.dir/wireless-spoof.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:5672: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:136: all] Error 2
