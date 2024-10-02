@@ -1,0 +1,22 @@
+/home/danny/esp-idf/projects/wireless-spoof/main/wireless-spoof.c: In function 'app_main':
+/home/danny/esp-idf/projects/wireless-spoof/main/wireless-spoof.c:36:17: error: 'ESP_EVENT' undeclared (first use in this function); did you mean 'IP_EVENT'?
+   36 |                 ESP_EVENT,
+      |                 ^~~~~~~~~
+      |                 IP_EVENT
+/home/danny/esp-idf/projects/wireless-spoof/main/wireless-spoof.c:36:17: note: each undeclared identifier is reported only once for each function it appears in
+/home/danny/esp-idf/projects/wireless-spoof/main/wireless-spoof.c:10:28: error: passing argument 4 of 'esp_event_handler_register_with' from incompatible pointer type [-Wincompatible-pointer-types]
+   10 | #define EVENT_HANDLER_NAME "event_handler"
+      |                            ^~~~~~~~~~~~~~~
+      |                            |
+      |                            char *
+/home/danny/esp-idf/projects/wireless-spoof/main/wireless-spoof.c:38:17: note: in expansion of macro 'EVENT_HANDLER_NAME'
+   38 |                 EVENT_HANDLER_NAME,
+      |                 ^~~~~~~~~~~~~~~~~~
+In file included from /home/danny/esp-idf/components/esp_wifi/include/esp_wifi.h:55,
+                 from /home/danny/esp-idf/projects/wireless-spoof/main/wireless-spoof.c:3:
+/home/danny/esp-idf/components/esp_event/include/esp_event.h:166:63: note: expected 'esp_event_handler_t' {aka 'void (*)(void *, const char *, long int,  void *)'} but argument is of type 'char *'
+  166 |                                           esp_event_handler_t event_handler,
+      |                                           ~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:76: esp-idf/main/CMakeFiles/__idf_main.dir/wireless-spoof.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:5672: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:136: all] Error 2

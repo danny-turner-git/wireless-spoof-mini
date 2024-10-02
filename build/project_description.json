@@ -1,7 +1,7 @@
 {
     "version":            "1.1",
     "project_name":       "wireless-spoof",
-    "project_version":    "9602a39-dirty",
+    "project_version":    "3e6bff2-dirty",
     "project_path":       "/home/danny/esp-idf/projects/wireless-spoof",
     "idf_path":           "/home/danny/esp-idf",
     "build_dir":          "/home/danny/esp-idf/projects/wireless-spoof/build",
