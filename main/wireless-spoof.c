@@ -5,6 +5,10 @@
 #include "freertos/task.h"
 #include "esp_event.h"
 
+
+//for event loop arguments: .task_name
+#define EVENT_HANDLER_NAME "event_handler"
+
 void event_handler(void* handler_arg, esp_event_base_t base, int32_t id, void* event_data){
 
 	//handler logic
@@ -16,10 +20,10 @@ void app_main(void)
 	//event handler initialisation
 	esp_event_loop_args_t loop_args = {
 		.queue_size = 5,
-		.task_name = event_handler,
-		.task_priority = NULL,
+		.task_name = EVENT_HANDLER_NAME,
+		.task_priority = 0,
 		.task_stack_size = 10,
-		.task_core_id = ESP_EVENT_ANY_ID,
+		.task_core_id = tskNO_AFFINITY, //doesn't pin to a specific core
 	};
 	
 
@@ -27,7 +31,12 @@ void app_main(void)
 
 	esp_event_loop_create(&loop_args, &loop_handle);
 
-	esp_event_handler_register_with(loop_handle, ESP_EVENT_ANY_ID, event_handler, NULL);
+	esp_event_handler_register_with(
+		loop_handle,
+		WIFI_EVENT,
+		WIFI_EVENT_STA_START, 
+                event_handler, 
+		NULL);
 
 	/*esp_err_t netif = esp_netif_init();
 	if (netif != ESP_OK){
