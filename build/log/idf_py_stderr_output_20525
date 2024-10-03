@@ -1,0 +1,22 @@
+/home/danny/esp-idf/projects/wireless-spoof/main/wireless-spoof.c: In function 'app_main':
+/home/danny/esp-idf/projects/wireless-spoof/main/wireless-spoof.c:65:27: error: incompatible type for argument 1 of 'esp_wifi_set_mode'
+   65 |         esp_wifi_set_mode(&wifi_cfg, WIFI_MODE_STA);
+      |                           ^~~~~~~~~
+      |                           |
+      |                           wifi_config_t *
+In file included from /home/danny/esp-idf/projects/wireless-spoof/main/wireless-spoof.c:3:
+/home/danny/esp-idf/components/esp_wifi/include/esp_wifi.h:376:41: note: expected 'wifi_mode_t' but argument is of type 'wifi_config_t *'
+  376 | esp_err_t esp_wifi_set_mode(wifi_mode_t mode);
+      |                             ~~~~~~~~~~~~^~~~
+/home/danny/esp-idf/projects/wireless-spoof/main/wireless-spoof.c:65:9: error: too many arguments to function 'esp_wifi_set_mode'
+   65 |         esp_wifi_set_mode(&wifi_cfg, WIFI_MODE_STA);
+      |         ^~~~~~~~~~~~~~~~~
+/home/danny/esp-idf/components/esp_wifi/include/esp_wifi.h:376:11: note: declared here
+  376 | esp_err_t esp_wifi_set_mode(wifi_mode_t mode);
+      |           ^~~~~~~~~~~~~~~~~
+/home/danny/esp-idf/projects/wireless-spoof/main/wireless-spoof.c:53:19: warning: unused variable 'netif' [-Wunused-variable]
+   53 |         esp_err_t netif = esp_netif_init();
+      |                   ^~~~~
+make[2]: *** [esp-idf/main/CMakeFiles/__idf_main.dir/build.make:76: esp-idf/main/CMakeFiles/__idf_main.dir/wireless-spoof.c.obj] Error 1
+make[1]: *** [CMakeFiles/Makefile2:5672: esp-idf/main/CMakeFiles/__idf_main.dir/all] Error 2
+make: *** [Makefile:136: all] Error 2

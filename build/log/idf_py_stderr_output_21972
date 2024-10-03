@@ -1,0 +1,4 @@
+/home/danny/esp-idf/projects/wireless-spoof/main/wireless-spoof.c: In function 'app_main':
+/home/danny/esp-idf/projects/wireless-spoof/main/wireless-spoof.c:53:19: warning: unused variable 'netif' [-Wunused-variable]
+   53 |         esp_err_t netif = esp_netif_init();
+      |                   ^~~~~
